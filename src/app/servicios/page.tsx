@@ -85,7 +85,7 @@ export default function Servicios() {
             </h1>
           </div>
           <p className="max-w-3xl mx-auto text-lg text-slate-600">
-            Descubre todo lo que ElektronTech te ofrece
+            Descubre todo lo que Ev Davey te ofrece
           </p>
         </div>
       </section>

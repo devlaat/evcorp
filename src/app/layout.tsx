@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elektron Tech",
+  title: "Ev Davey",
   description: "Hello Electrónica! Proyectos, cursos y descargas.",
 };
 
