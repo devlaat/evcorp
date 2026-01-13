@@ -47,7 +47,7 @@ export function Navbar() {
           className="flex items-center gap-2 text-xl font-bold text-slate-900 hover:text-blue-600 transition"
         >
           <Zap className="h-6 w-6 text-blue-600" />
-          Ev Davey
+          EvCorp | Evidencia Tributaria
         </Link>
 
         {/* Desktop Menu */}
