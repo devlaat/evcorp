@@ -6,7 +6,7 @@ import {
   Menu,
   X,
   ChevronDown,
-  Zap,
+  FileCheck,
   BookOpen,
   Mail,
   Home,
@@ -41,16 +41,24 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4">
-        {/* Logo */}
+        {/* ================= LOGO ================= */}
         <Link
           href="/"
-          className="flex items-center gap-2 text-xl font-bold text-slate-900 hover:text-blue-600 transition"
+          className="flex items-center gap-2 hover:text-blue-600 transition"
         >
-          <Zap className="h-6 w-6 text-blue-600" />
-          EvCorp | Evidencia Tributaria
+          <FileCheck className="h-7 w-7 text-blue-600" />
+
+          <div className="leading-tight">
+            <span className="block text-xl font-bold text-slate-900">
+              EvCorp
+            </span>
+            <span className="block text-sm font-medium text-slate-600">
+              Evidencia Tributaria
+            </span>
+          </div>
         </Link>
 
-        {/* Desktop Menu */}
+        {/* ================= DESKTOP MENU ================= */}
         <nav className="hidden md:flex items-center gap-1">
           <Link className="nav-link" href="/">
             <Home className="h-4 w-4" /> Inicio
@@ -63,19 +71,28 @@ export function Navbar() {
           {/* Dropdown Desktop */}
           <div className="relative group">
             <button className="nav-link">
-              <Zap className="h-4 w-4" />
+              <FileCheck className="h-4 w-4" />
               Hello Electrónica!
               <ChevronDown className="h-4 w-4 transition group-hover:rotate-180" />
             </button>
 
             <div className="absolute left-0 top-full mt-2 w-56 rounded-lg border bg-white shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition">
-              <Link className="dropdown-link" href="/hello-electronica/proyectos">
+              <Link
+                className="dropdown-link"
+                href="/hello-electronica/proyectos"
+              >
                 Proyectos
               </Link>
-              <Link className="dropdown-link" href="/hello-electronica/cursos">
+              <Link
+                className="dropdown-link"
+                href="/hello-electronica/cursos"
+              >
                 Cursos
               </Link>
-              <Link className="dropdown-link" href="/hello-electronica/descargas">
+              <Link
+                className="dropdown-link"
+                href="/hello-electronica/descargas"
+              >
                 Descargas
               </Link>
             </div>
@@ -86,7 +103,7 @@ export function Navbar() {
           </Link>
         </nav>
 
-        {/* Mobile Button */}
+        {/* ================= MOBILE BUTTON ================= */}
         <button
           onClick={() => setMobileOpen(true)}
           className="md:hidden p-2 rounded-lg hover:bg-slate-100 active:bg-slate-200"
@@ -96,88 +113,85 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* ================== MOBILE OVERLAY ================== */}
+      {/* ================= MOBILE OVERLAY ================= */}
       {mobileOpen && (
         <>
-          {/* Overlay de fondo */}
+          {/* Fondo */}
           <div
             className="fixed inset-0 z-40 bg-black/40 md:hidden animate-in fade-in duration-300"
             onClick={handleMenuClose}
           />
 
-          {/* Panel deslizable */}
+          {/* Panel */}
           <div className="fixed right-0 top-0 h-screen w-full max-w-xs z-[9999] bg-white shadow-2xl md:hidden animate-in slide-in-from-right duration-300">
             {/* Header móvil */}
             <div className="flex h-16 items-center justify-between border-b border-slate-200 px-6 bg-slate-50">
               <span className="text-lg font-semibold text-slate-900 flex items-center gap-2">
-                <Zap className="h-5 w-5 text-blue-600" />
+                <FileCheck className="h-5 w-5 text-blue-600" />
                 Menú
               </span>
               <button
                 onClick={handleMenuClose}
-                className="p-2 rounded-lg hover:bg-slate-200 transition text-slate-900"
+                className="p-2 rounded-lg hover:bg-slate-200 transition"
                 aria-label="Cerrar menú"
               >
                 <X className="h-6 w-6" />
               </button>
             </div>
 
-            {/* Contenido */}
+            {/* Contenido móvil */}
             <div className="p-6 space-y-1 overflow-y-auto h-[calc(100vh-64px)]">
               <Link
                 onClick={handleMenuClose}
-                className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-100 transition text-slate-700 hover:text-blue-600 font-medium active:bg-slate-200"
+                className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-100 transition text-slate-700 hover:text-blue-600 font-medium"
                 href="/"
               >
-                <Home className="h-5 w-5 flex-shrink-0" />
-                <span>Inicio</span>
+                <Home className="h-5 w-5" /> Inicio
               </Link>
 
               <Link
                 onClick={handleMenuClose}
-                className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-100 transition text-slate-700 hover:text-blue-600 font-medium active:bg-slate-200"
+                className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-100 transition text-slate-700 hover:text-blue-600 font-medium"
                 href="/servicios"
               >
-                <BookOpen className="h-5 w-5 flex-shrink-0" />
-                <span>Servicios</span>
+                <BookOpen className="h-5 w-5" /> Servicios
               </Link>
 
-              {/* Divider */}
               <div className="my-2 border-t border-slate-200" />
 
               {/* Dropdown móvil */}
               <button
                 onClick={() => toggleDropdown("hello")}
-                className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-100 transition text-slate-700 hover:text-blue-600 font-medium w-full active:bg-slate-200"
+                className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-100 transition text-slate-700 hover:text-blue-600 font-medium w-full"
               >
-                <Zap className="h-5 w-5 flex-shrink-0" />
-                <span>Hello Electrónica!</span>
+                <FileCheck className="h-5 w-5" />
+                Hello Electrónica!
                 <ChevronDown
-                  className={`ml-auto transition-transform duration-300 flex-shrink-0 ${
+                  className={`ml-auto transition-transform ${
                     activeDropdown === "hello" ? "rotate-180" : ""
                   }`}
                 />
               </button>
 
               {activeDropdown === "hello" && (
-                <div className="pl-2 space-y-1 animate-in fade-in slide-in-from-top duration-200">
+                <div className="pl-2 space-y-1">
                   <Link
                     onClick={handleMenuClose}
-                    className="flex items-center gap-3 px-6 py-2.5 rounded-lg hover:bg-blue-50 transition text-slate-600 hover:text-blue-600 text-sm border-l-2 border-blue-600 active:bg-blue-100"
+                    className="block px-6 py-2 text-sm text-slate-600 hover:text-blue-600"
                     href="/hello-electronica/proyectos"
                   >
                     Proyectos
                   </Link>
                   <Link
                     onClick={handleMenuClose}
-                    className="flex items-center gap-3 px-6 py-2.5 rounded-lg hover:bg-blue-50 transition text-slate-600 hover:text-blue-600 text-sm border-l-2 border-blue-600 active:bg-blue-100"
+                    className="block px-6 py-2 text-sm text-slate-600 hover:text-blue-600"
                     href="/hello-electronica/cursos"
                   >
                     Cursos
                   </Link>
                   <Link
                     onClick={handleMenuClose}
-                    className="flex items-center gap-3 px-6 py-2.5 rounded-lg hover:bg-blue-50 transition text-slate-600 hover:text-blue-600 text-sm border-l-2 border-blue-600 active:bg-blue-100"
+                    className="block px-6 py-2 text-sm text-slate-600 hover:text-blue-600"
                     href="/hello-electronica/descargas"
                   >
                     Descargas
@@ -185,16 +199,14 @@ export function Navbar() {
                 </div>
               )}
 
-              {/* Divider */}
               <div className="my-2 border-t border-slate-200" />
 
               <Link
                 onClick={handleMenuClose}
-                className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-100 transition text-slate-700 hover:text-blue-600 font-medium active:bg-slate-200"
+                className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-100 transition text-slate-700 hover:text-blue-600 font-medium"
                 href="/contacto"
               >
-                <Mail className="h-5 w-5 flex-shrink-0" />
-                <span>Contacto</span>
+                <Mail className="h-5 w-5" /> Contacto
               </Link>
             </div>
           </div>
