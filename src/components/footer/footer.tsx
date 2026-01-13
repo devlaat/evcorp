@@ -11,7 +11,7 @@ export function Footer() {
         {/* Texto */}
         <div className="text-sm text-muted-foreground">
           <p>
-            © {new Date().getFullYear()} <strong>Ev Davey</strong>.  
+            © {new Date().getFullYear()} <strong>EvCorp</strong>.  
             Todos los derechos reservados.
           </p>
           <p className="mt-1">devLAAT 💻🚀</p>
