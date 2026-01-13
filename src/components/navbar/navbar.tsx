@@ -10,8 +10,9 @@ import {
   BookOpen,
   Mail,
   Home,
-  Building2,
   Calculator,
+  ShieldCheck,
+  FolderOpen,
 } from "lucide-react";
 
 export function Navbar() {
@@ -55,74 +56,100 @@ export function Navbar() {
           </div>
         </Link>
 
-        {/* DESKTOP MENU */}
+        {/* ================= DESKTOP MENU ================= */}
         <nav className="hidden md:flex items-center gap-1">
           <Link className="nav-link" href="/">
             <Home className="h-4 w-4" /> Inicio
           </Link>
 
-          {/* Servicios Tributarios */}
+          {/* Servicios */}
           <div className="relative group">
             <button className="nav-link">
               <BookOpen className="h-4 w-4" />
-              Servicios Tributarios
-              <ChevronDown className="h-4 w-4 group-hover:rotate-180 transition" />
+              Servicios
+              <ChevronDown className="h-4 w-4 transition group-hover:rotate-180" />
             </button>
-
             <div className="dropdown">
               <Link className="dropdown-link" href="/servicios/apertura-nit">
                 Apertura de NIT
               </Link>
               <Link className="dropdown-link" href="/servicios/formularios">
-                Formularios 110, 200, 400, 500, 610
+                Formularios SIN (110, 200, 400, 500, 610)
               </Link>
               <Link className="dropdown-link" href="/servicios/compras-ventas">
                 Registro de Compras y Ventas
               </Link>
+              <Link className="dropdown-link" href="/servicios/regularizacion">
+                Regularización Tributaria
+              </Link>
             </div>
           </div>
 
-          {/* Contabilidad */}
+          {/* Soluciones Contables */}
           <div className="relative group">
             <button className="nav-link">
               <Calculator className="h-4 w-4" />
-              Contabilidad & Finanzas
-              <ChevronDown className="h-4 w-4 group-hover:rotate-180 transition" />
+              Soluciones Contables
+              <ChevronDown className="h-4 w-4 transition group-hover:rotate-180" />
             </button>
-
             <div className="dropdown">
-              <Link className="dropdown-link" href="/contabilidad/balances">
-                Balances (Apertura, Gestión y Cierre)
-              </Link>
               <Link className="dropdown-link" href="/contabilidad/registros">
                 Registros Contables
               </Link>
+              <Link className="dropdown-link" href="/contabilidad/balances">
+                Balances (Apertura, Gestión y Cierre)
+              </Link>
               <Link className="dropdown-link" href="/contabilidad/flujo-caja">
-                Bancarización y Flujo de Caja
+                Flujo de Caja y Bancarización
+              </Link>
+              <Link className="dropdown-link" href="/contabilidad/conciliaciones">
+                Conciliaciones Bancarias
               </Link>
             </div>
           </div>
 
-          {/* Trámites */}
+          {/* Auditoría */}
           <div className="relative group">
             <button className="nav-link">
-              <Building2 className="h-4 w-4" />
-              Trámites
-              <ChevronDown className="h-4 w-4 group-hover:rotate-180 transition" />
+              <ShieldCheck className="h-4 w-4" />
+              Auditoría
+              <ChevronDown className="h-4 w-4 transition group-hover:rotate-180" />
             </button>
-
             <div className="dropdown">
-              <Link className="dropdown-link" href="/tramites/seprec">
-                SEPREC
+              <Link className="dropdown-link" href="/auditoria/financiera">
+                Auditoría Financiera
               </Link>
-              <Link className="dropdown-link" href="/tramites/ministerio-trabajo">
-                Ministerio de Trabajo
+              <Link className="dropdown-link" href="/auditoria/tributaria">
+                Auditoría Tributaria
               </Link>
-              <Link className="dropdown-link" href="/tramites/cns-afp">
-                CNS y AFPs
+              <Link className="dropdown-link" href="/auditoria/interna">
+                Auditoría Interna
               </Link>
-              <Link className="dropdown-link" href="/tramites/alcaldia">
-                Alcaldía
+              <Link className="dropdown-link" href="/auditoria/informes">
+                Informes de Auditoría
+              </Link>
+            </div>
+          </div>
+
+          {/* Recursos */}
+          <div className="relative group">
+            <button className="nav-link">
+              <FolderOpen className="h-4 w-4" />
+              Recursos
+              <ChevronDown className="h-4 w-4 transition group-hover:rotate-180" />
+            </button>
+            <div className="dropdown">
+              <Link className="dropdown-link" href="/recursos/normativa">
+                Normativa Tributaria
+              </Link>
+              <Link className="dropdown-link" href="/recursos/calendario">
+                Calendario Fiscal
+              </Link>
+              <Link className="dropdown-link" href="/recursos/guias">
+                Guías y Artículos
+              </Link>
+              <Link className="dropdown-link" href="/recursos/faq">
+                Preguntas Frecuentes
               </Link>
             </div>
           </div>
@@ -132,20 +159,26 @@ export function Navbar() {
           </Link>
         </nav>
 
-        {/* MOBILE BUTTON */}
-        <button onClick={() => setMobileOpen(true)} className="md:hidden p-2">
+        {/* ================= MOBILE BUTTON ================= */}
+        <button
+          onClick={() => setMobileOpen(true)}
+          className="md:hidden p-2 rounded-lg hover:bg-slate-100"
+        >
           <Menu className="h-6 w-6" />
         </button>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* ================= MOBILE MENU ================= */}
       {mobileOpen && (
         <>
-          <div className="fixed inset-0 bg-black/40 z-40" onClick={handleMenuClose} />
+          <div
+            className="fixed inset-0 z-40 bg-black/40 md:hidden"
+            onClick={handleMenuClose}
+          />
 
-          <div className="fixed right-0 top-0 h-screen w-full max-w-xs bg-white z-50 shadow-xl">
-            <div className="flex justify-between items-center h-16 px-6 border-b">
-              <span className="font-semibold flex gap-2 items-center">
+          <div className="fixed right-0 top-0 z-50 h-screen w-full max-w-xs bg-white shadow-xl md:hidden">
+            <div className="flex h-16 items-center justify-between border-b px-6">
+              <span className="flex items-center gap-2 font-semibold">
                 <FileCheck className="h-5 w-5 text-blue-600" />
                 Menú
               </span>
@@ -159,33 +192,27 @@ export function Navbar() {
                 <Home className="h-5 w-5" /> Inicio
               </Link>
 
-              {/* Servicios */}
-              <button onClick={() => toggleDropdown("servicios")} className="mobile-link w-full">
-                <BookOpen className="h-5 w-5" /> Servicios Tributarios
-                <ChevronDown className={`ml-auto ${activeDropdown === "servicios" && "rotate-180"}`} />
-              </button>
-
-              {activeDropdown === "servicios" && (
-                <div className="pl-6 text-sm space-y-1">
-                  <Link href="/servicios/apertura-nit">Apertura de NIT</Link>
-                  <Link href="/servicios/formularios">Formularios SIN</Link>
-                  <Link href="/servicios/compras-ventas">Compras y Ventas</Link>
+              {[
+                ["servicios", "Servicios", BookOpen],
+                ["contabilidad", "Soluciones Contables", Calculator],
+                ["auditoria", "Auditoría", ShieldCheck],
+                ["recursos", "Recursos", FolderOpen],
+              ].map(([key, label, Icon]: any) => (
+                <div key={key}>
+                  <button
+                    onClick={() => toggleDropdown(key)}
+                    className="mobile-link w-full"
+                  >
+                    <Icon className="h-5 w-5" />
+                    {label}
+                    <ChevronDown
+                      className={`ml-auto transition ${
+                        activeDropdown === key ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
                 </div>
-              )}
-
-              {/* Contabilidad */}
-              <button onClick={() => toggleDropdown("contabilidad")} className="mobile-link w-full">
-                <Calculator className="h-5 w-5" /> Contabilidad
-                <ChevronDown className={`ml-auto ${activeDropdown === "contabilidad" && "rotate-180"}`} />
-              </button>
-
-              {activeDropdown === "contabilidad" && (
-                <div className="pl-6 text-sm space-y-1">
-                  <Link href="/contabilidad/balances">Balances</Link>
-                  <Link href="/contabilidad/registros">Registros</Link>
-                  <Link href="/contabilidad/flujo-caja">Flujo de Caja</Link>
-                </div>
-              )}
+              ))}
 
               <Link onClick={handleMenuClose} className="mobile-link" href="/contacto">
                 <Mail className="h-5 w-5" /> Contacto
