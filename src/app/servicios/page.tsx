@@ -81,11 +81,11 @@ export default function Servicios() {
         <div className="max-w-7xl mx-auto text-center">
           <div className="flex justify-center items-center gap-3 mb-6">
             <h1 className="text-5xl md:text-6xl font-bold text-slate-900">
-              SOPORTE TÉCNICO AC⚡DC
+              ECA
             </h1>
           </div>
           <p className="max-w-3xl mx-auto text-lg text-slate-600">
-            Descubre todo lo que Ev Davey te ofrece
+            Descubre todo lo que EvCorp te ofrece
           </p>
         </div>
       </section>

@@ -5,7 +5,7 @@ import { FaWhatsapp, FaTiktok, FaFacebook, FaTelegram, FaYoutube } from "react-i
 const socials = [
   {
     name: "WhatsApp",
-    href: "https://wa.me/59169717553",
+    href: "https://wa.me/59160515320",
     Icon: FaWhatsapp,
     bgColor: "bg-green-500",
   },

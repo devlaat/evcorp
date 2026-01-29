@@ -6,7 +6,7 @@ export default function Home() {
       <section className="px-6 py-24 text-center">
         <h1 className="text-4xl md:text-5xl font-bold">
           EvCorp{" "}
-          <span className="text-blue-400">Evidencia Tributaria</span>
+          <span className="text-blue-400">Auditores Contigo</span>
         </h1>
 
         <p className="mt-6 text-lg md:text-xl max-w-3xl mx-auto text-slate-300">
@@ -103,11 +103,6 @@ export default function Home() {
           Solicitar asesoría
         </a>
       </section>
-
-      {/* FOOTER */}
-      <footer className="px-6 py-6 text-center text-slate-400 text-sm bg-slate-950">
-        © {new Date().getFullYear()} EvCorp | Evidencia Tributaria. Todos los derechos reservados.
-      </footer>
 
     </main>
   );

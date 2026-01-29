@@ -36,14 +36,14 @@ export default function Contacto() {
     {
       icon: Mail,
       titulo: "Email",
-      valor: "contacto@elektronacdc.com",
-      enlace: "mailto:contacto@elektronacdc.com",
+      valor: "contacto@evcorp.com",
+      enlace: "mailto:contacto@evcorp.com",
     },
     {
       icon: MessageCircle,
       titulo: "WhatsApp",
-      valor: "+591 6971 7553",
-      enlace: "https://wa.me/59169717553",
+      valor: "+591 60515320",
+      enlace: "https://wa.me/59160515320",
     },
     {
       icon: MapPin,

@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import {
   Menu,
   X,
-  FileCheck,
   BookOpen,
   Mail,
   Home,
@@ -38,15 +38,23 @@ export function Navbar() {
         {/* ================= LOGO ================= */}
         <Link
           href="/"
-          className="flex items-center gap-2 hover:text-blue-600 transition"
+          className="flex items-center gap-3 hover:opacity-90 transition"
         >
-          <FileCheck className="h-7 w-7 text-blue-600" />
+          <Image
+            src="/images/logo/evcorp.png"
+            alt="EvCorp - Evidencia Tributaria"
+            width={40}
+            height={40}
+            priority
+            className="object-contain"
+          />
+
           <div className="leading-tight">
             <span className="block text-xl font-bold text-slate-900">
               EvCorp
             </span>
             <span className="block text-sm font-medium text-slate-600">
-              Evidencia Tributaria
+              Auditores Contigo
             </span>
           </div>
         </Link>
@@ -102,7 +110,12 @@ export function Navbar() {
             {/* Header móvil */}
             <div className="flex h-16 items-center justify-between border-b border-slate-200 px-6 bg-slate-50">
               <span className="text-lg font-semibold text-slate-900 flex items-center gap-2">
-                <FileCheck className="h-5 w-5 text-blue-600" />
+                <Image
+                  src="/images/logo/evcorp.png"
+                  alt="EvCorp"
+                  width={28}
+                  height={28}
+                />
                 Menú
               </span>
               <button
